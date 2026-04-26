@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 Smart IR-Based AI Air Conditioner Controller — My First Step</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%232563eb%22 width=%22100%22 height=%22100%22 rx=%2215%22/><text x=%2250%22 y=%2270%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>N</text></svg>">
+  <style>
+    .post-header { padding: 3rem 0 1.5rem; }
+    .post-date   { color: var(--text-muted); font-size: .875rem; margin-bottom: .75rem; }
+    .post-title  { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+    .post-tags   { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .post-body   { padding-bottom: 4rem; }
+    .post-body h2 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 .75rem; }
+    .post-body h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; }
+    .post-body p  { margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.8; }
+    .post-body ul, .post-body ol { margin: 0 0 1rem 1.5rem; color: var(--text-secondary); line-height: 1.8; }
+    .post-body img { max-width: 100%; border-radius: 8px; margin: 1rem 0; }
+    .post-body em  { font-style: italic; color: var(--text-muted); font-size: .875rem; }
+    .post-body code { background: var(--tag-bg); padding: .2rem .4rem; border-radius: 4px; font-size: .875em; }
+    .post-body pre  { background: var(--tag-bg); padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1rem; }
+    .post-body pre code { background: none; padding: 0; }
+    .back-link  { display: inline-block; margin: 1.5rem 0; color: var(--text-secondary); font-size: .875rem; }
+    .back-link:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index-zh.html" class="nav-link">中文</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <a href="../index.html" class="back-link">← Back to Home</a>
+
+      <div class="post-header">
+        <p class="post-date">2025-07-02</p>
+        <h1 class="post-title">🚀 Smart IR-Based AI Air Conditioner Controller — My First Step</h1>
+        <div class="post-tags"><span class="tag">ESP32</span><span class="tag">IR</span><span class="tag">AC</span><span class="tag">Smart Home</span><span class="tag">PlatformIO</span><span class="tag">AI</span><span class="tag">Edge Computing</span></div>
+      </div>
+
+      <article class="post-body">
+        <p>This entry marks the beginning of my journey into building an End-to-End (E2E) edge AI agent to control an AC unit. It outlines my initial requirements and the foundational steps I've completed so far.</p>
+<h2>1. My Requirements</h2>
+<p>My core objectives for this project are clear:</p>
+<ul>
+<li>First, I aim to build an <strong>E2E edge AI agent</strong> capable of controlling a TECO split‑type AC via IR signals.</li>
+<li>Second, I want to ensure it supports both <strong>Manual Smart Control</strong> (which I envision implementing through a future app or voice interface) and an <strong>Autonomous AI Mode</strong> that will react based on sensor data.</li>
+<li>Finally, I'm starting with the <strong>ESP32 DevKitC (WROOM)</strong> as my initial IR bridge, keeping in mind future scalability for a more robust backend AI system and broader smart home integration.</li>
+</ul>
+<h2>2. Steps I've Completed</h2>
+<p>I've made significant strides in laying the groundwork for this ambitious project, tackling the essential setup phases.</p>
+<h3>✅ Hardware Setup</h3>
+<p>My journey began with selecting and acquiring the necessary hardware components. I decided on the <strong>HX1838 IR Receiver + Emitter Kit</strong> for its ease of use and availability, and I've successfully purchased two of these kits to have a backup. For the brain of the operation, I chose the <strong>ESP32 DevKitC</strong> as my primary development board, confident in its robust Wi-Fi and Bluetooth capabilities for future smart features. To facilitate prototyping, I also picked up a <strong>breadboard</strong>, a comprehensive <strong>jumper wire set</strong>, and a reliable <strong>5 V 1 A USB adapter</strong> along with a <strong>data-capable micro-USB cable</strong> for both power and programming.</p>
+<h3>✅ Wiring</h3>
+<p>With the hardware in hand, the next phase was to establish the basic connections. I carefully wired the HX1838 IR Receiver: connecting its VCC to the ESP32's 5 V (or 3.3 V) pin, GND to the ESP32's GND, and the OUT pin to ESP32's GPIO 5. I meticulously verified the breadboard setup, double-checking all connections to ensure they were secure and correct before powering anything on.</p>
+<h3>✅ Development Environment Setup</h3>
+<p>A robust development environment is absolutely key to efficient progress, and I'm pleased to say I've got mine set up. I successfully installed <strong>VS Code</strong> and the <strong>PlatformIO IDE extension</strong>, which I've found provides an excellent integrated development experience for embedded systems. Within PlatformIO, I created a new project, specifically targeting the <strong>ESP32 Dev Module</strong> and utilizing the <strong>Arduino framework</strong> to simplify programming the ESP32. To confirm everything was working, I compiled and uploaded a simple “Blink + Serial print” sketch. The upload process was a success, as you can see in the terminal output below, completing in a swift <strong>46.10 seconds</strong> and writing <strong>269488 bytes</strong>.</p>
+<p><img alt="Successful PlatformIO sketch upload to ESP32" src="/assets/images/first_upload.png" />
+<em>Figure 1: Successful PlatformIO sketch upload to ESP32.</em></p>
+<h3>✅ Serial Monitor</h3>
+<p>Understanding the device's output is critical for debugging and verification, so I made sure to familiarize myself thoroughly with the Serial Monitor. I learned to open and effectively use the <strong>PlatformIO Serial Monitor</strong> (easily accessed via the 🔌 plug icon in VS Code). Through it, I confirmed the <strong>LED blink</strong> functionality and happily observed the serial prints, which correctly displayed “LED ON/OFF” every second, clearly indicating successful program execution. I also made sure to learn how to gracefully close the Serial Monitor using Ctrl+C or the trash icon, which is important for preventing frustrating port conflicts down the line.</p>
+<p><img alt="LED ON/OFF Serial Output" src="/assets/images/led_on_off.png" />
+<em>Figure 2: Serial Monitor output showing alternating "LED ON" and "LED OFF" messages.</em></p>
+<h2>3. My Next Planned Step</h2>
+<p>My immediate focus is to prepare for the crucial IR testing phase with the HX1838. This involves a few key steps:</p>
+<ol>
+<li>First, I'll <strong>install</strong> the <code>IRremoteESP8266</code> library within my PlatformIO project, as this library is absolutely essential for handling IR communication.</li>
+<li>Next, I'll <strong>replace</strong> my current blinking sketch with a dedicated IR receive/replay sketch.</li>
+<li>Finally, I'll utilize the Serial Monitor to <strong>capture TECO remote codes</strong> from my air conditioner's remote and then <strong>test the replay</strong> of these captured codes back to the AC unit to verify that I can indeed control it.</li>
+</ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Nigel Zeng. Built with pure HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

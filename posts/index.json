@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "smart-ac-controller-progress",
+    "title": "🚀 Smart IR-Based AI Air Conditioner Controller — My First Step",
+    "date": "2025-07-02",
+    "tags": [
+      "ESP32",
+      "IR",
+      "AC",
+      "Smart Home",
+      "PlatformIO",
+      "AI",
+      "Edge Computing"
+    ],
+    "url": "posts/smart-ac-controller-progress.html"
+  }
+]

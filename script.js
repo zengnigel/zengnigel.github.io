@@ -59,6 +59,37 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
   // ===============================
+  // Blog list — load from posts/index.json
+  // ===============================
+  (function initBlogList() {
+    const list = document.getElementById('blog-list');
+    if (!list) return;
+
+    // Determine path prefix (posts are one level deeper)
+    const isPost = window.location.pathname.includes('/posts/');
+    const prefix = isPost ? '../' : '';
+
+    fetch(prefix + 'posts/index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(posts) {
+        if (!posts.length) {
+          list.innerHTML = '<p style="color: var(--text-secondary);">Coming soon...</p>';
+          return;
+        }
+        list.innerHTML = posts.map(function(p) {
+          return '<a href="' + prefix + p.url + '" class="note-item">'
+            + '<span class="note-date">' + p.date + '</span>'
+            + '<span class="note-title">' + p.title + '</span>'
+            + '</a>';
+        }).join('');
+      })
+      .catch(function() {
+        list.innerHTML = '<p style="color: var(--text-secondary);">Coming soon...</p>';
+      });
+  })();
+
+
+  // ===============================
   // Active nav link based on current page
   // ===============================
   (function initNavLinks() {
